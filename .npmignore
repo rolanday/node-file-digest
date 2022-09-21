@@ -1,0 +1,17 @@
+*.tgz
+.eslintignore
+.eslintrc.js
+.gitignore
+.npmignore
+.prettierrc
+.idea
+.vscode
+coverage
+docs
+src
+__tests__
+gruntfile.js
+jest.config.js
+setenv.sh
+tsconfig.*
+typedoc.json

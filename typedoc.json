@@ -1,0 +1,11 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "hideGenerator": true,
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "externalPattern": "**/node_modules/**",
+  "exclude": ["**/*.spec.ts","**/*.test.js", "**/node_modules/**"],
+  "readme": "README.md"
+}
