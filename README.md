@@ -32,7 +32,7 @@ console.log(`digest: ${hashFileSync('image.dng', 'md5')}`);
 // digest: a3a66e185c3ccbd8d2f658200354e10d
 // digest: a3a66e185c3ccbd8d2f658200354e10d
 ```
-**2. Create a SHA256 file digest encoded as base64 **
+**3. Create a SHA256 file digest encoded as base64 **
 
 ```
 import { hashFile, hashFileSync } from 'node-file-digest';
@@ -50,16 +50,16 @@ hashFile('image.dng', 'sha256', { encoding: 'base64'})
 // digest: YANU/RXHl0w7d6pdNorh6JVOGxFtS8kg3W0DrKENphg=
 ```
 ## Usage
-Module exports the following functions, all having same call pattern:
-# **Functions**
+Module exports the following functions, all having the same call pattern:
+#### Functions
 * **hashFile**(filePath, algorithm, options)
 * **hashFileSync**(filePath, algorithm, options)
 * **hashString**(strVal, algorithm, options)
-### Parameters
-* **filePath**: Path to file to calculate digest
+#### Parameters
+* **filePath**: Path to file to calculate the digest
 * **algorithm**: 'md5' | 'sha1' | 'sha256' | 'sha512'
 * **options**: {}
 
-### Options
+#### Options
 * **encoding**: 'base64' | 'base64url' | 'hex'
-* **textMode**: Read text file line-by-line, feeding each line to hash generator. This option is useful for comparing text files that differ only in linefeed endings (e.g., dos/windows vs unix/macos).
+* **textMode**: Read text file line-by-line, feeding each line to hash generator. This option is useful for comparing text files that differ only in linefeed endings (e.g., dos/windows vs. unix/macos).
