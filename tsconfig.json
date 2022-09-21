@@ -17,10 +17,6 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
   },
-  "lib": [
-    "es2017",
-    "dom"
-  ],
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"
