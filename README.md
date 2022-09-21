@@ -6,12 +6,13 @@ This NodeJS module provides synchronous and asynchronous functions for generatin
 
 To generate a file hash...
 
-**1. Install**
+1. **Install**
 
 ```shell
 npm install node-file-digest
 ```
-**2. Create an MD5 file digest**
+2. **Create an MD5 file digest**
+
 ```
 import { hashFile, hashFileSync } from 'node-file-digest';
 // const hashFile = require('node-file-digest').hashFile; // alt usage if not importing
@@ -32,7 +33,7 @@ console.log(`digest: ${hashFileSync('image.dng', 'md5')}`);
 // digest: a3a66e185c3ccbd8d2f658200354e10d
 // digest: a3a66e185c3ccbd8d2f658200354e10d
 ```
-**3. Create a SHA256 file digest encoded as base64 **
+3. **Create a SHA256 file digest encoded as base64**
 
 ```
 import { hashFile, hashFileSync } from 'node-file-digest';
