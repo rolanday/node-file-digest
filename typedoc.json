@@ -6,6 +6,5 @@
   "excludePrivate": true,
   "excludeProtected": true,
   "externalPattern": "**/node_modules/**",
-  "exclude": ["**/*.spec.ts","**/*.test.js", "**/node_modules/**"],
-  "readme": "README.md"
+  "exclude": ["**/*.spec.ts","**/*.test.js", "**/*.md", "**/node_modules/**"]
 }

@@ -60,5 +60,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-exec');
-  grunt.registerTask('make-dist', ['clean', 'exec:build', 'copy:js', 'copy:declarations', 'exec:pack', 'exec:docs']);
+  grunt.registerTask('make-dist', ['clean', 'exec:build', 'copy:js', 'copy:declarations', 'exec:pack']);
 };
