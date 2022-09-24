@@ -1,9 +1,10 @@
 {
   "name": "node-file-digest",
-  "version": "0.1.7",
-  "description": "Generate file digests using various hash algorithims",
-  "main": "./dist/index.js",
-  "types": "./types/index.d.ts",
+  "description": "Generate file digests using various hash algorithms",
+  "version": "0.1.9",
+  "main": "index.js",
+  "author": "Roland Ayala",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/rolanday/node-file-digest.git"
   },
-  "author": "Roland Ayala",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rolanday/node-file-digest/issues"
   },

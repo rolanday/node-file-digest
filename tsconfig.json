@@ -2,8 +2,6 @@
   "compilerOptions": {
     "module": "commonjs",
     "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "esModuleInterop": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,

@@ -1,14 +1,34 @@
 // eslint-disable-next-line no-undef
 module.exports = function(grunt) {
+  const path = require('path');
+  const fs = require('fs');
+  const root = process.cwd();
+  const dist = path.join(process.cwd(), 'dist');
+  function makePackageDotJsonDist() {
+    const src = path.join(root, 'package.json');
+    const dst = path.join(dist, 'package.json');
+    const pkg = JSON.parse(fs.readFileSync(src));
+    delete pkg.devDependencies;
+    delete pkg.scripts;
+    console.info(`Writing ${dst}`);
+    try { 
+      fs.writeFileSync(dst, JSON.stringify(pkg, null, 2));
+    } catch(e) {
+      console.error(`Error writing dist/package.json: ${e.message}`);
+    }
+  }
   grunt.initConfig({
     exec: {
       build: 'tsc',
-      pack: 'npm pack --silent',
+      pack: {
+        cwd: './dist',
+        cmd: `npm pack"`
+      },
       docs: 'typedoc'
     },
     clean: {
       dist: {
-        src: ['dist/', 'coverage', 'docs/', 'types/', 'node-file-digest-*.tgz'],
+        src: ['dist', 'coverage', 'docs', 'node-file-digest-*.tgz'],
         options: {
           verbose: false,
           'no-write': false,
@@ -27,27 +47,21 @@ module.exports = function(grunt) {
       },
     },
     copy: {
-      js : {
+      src : {
         files : [
           {
             expand: true,
             flatten : false,
             cwd: 'src',
-            src: ['**/*.js', '!**/*.spec.js'],
+            src: ['**/*.js', '**/*.d.ts'],
             dest: 'dist/',
             options : {
             },
           },
-        ],
-      },
-      declarations : {
-        files : [
           {
-            expand: true,
-            flatten : false,
-            cwd: 'src',
-            src: ['**/*.d.ts', '!**/*.spec.d.ts'],
-            dest: 'types/',
+            expand: false,
+            src: ['LICENSE', '.npmignore'],
+            dest: 'dist/',
             options : {
             },
           },
@@ -60,5 +74,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-exec');
-  grunt.registerTask('make-dist', ['clean', 'exec:build', 'copy:js', 'copy:declarations', 'exec:pack']);
+  grunt.task.registerTask('make-dist-pkg-json', 'Making dist/package.json', makePackageDotJsonDist);
+  grunt.registerTask('pack', ['exec:pack']); 
+  grunt.registerTask('make-dist', ['clean', 'exec:build', 'copy:src', 'make-dist-pkg-json']);
 };
