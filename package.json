@@ -1,7 +1,7 @@
 {
   "name": "node-file-digest",
   "description": "Generate file digests using various hash algorithms",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "main": "index.js",
   "author": "Roland Ayala",
   "license": "MIT",

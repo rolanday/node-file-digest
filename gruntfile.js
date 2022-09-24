@@ -60,7 +60,7 @@ module.exports = function(grunt) {
           },
           {
             expand: false,
-            src: ['LICENSE', '.npmignore'],
+            src: ['LICENSE', 'README.md', '.npmignore'],
             dest: 'dist/',
             options : {
             },
